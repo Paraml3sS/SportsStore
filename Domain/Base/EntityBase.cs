@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Dal
+namespace Domain.Base
 {
     public class EntityBase
     {
