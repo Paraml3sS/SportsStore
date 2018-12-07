@@ -22,7 +22,7 @@ namespace Dal.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connectionString = @"Data Source=DESKTOP-22TA5GA\YBSQL;Initial Catalog=SportStore;Integrated Security=True;App=EntityFramework";
+                var connectionString = @"Data Source=DESKTOP-22TA5GA\YBSQL;Database=SportStoreV2;Integrated Security=True;App=EntityFramework";
                 optionsBuilder.UseSqlServer(connectionString, options => options.EnableRetryOnFailure())
                     .ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
             }
