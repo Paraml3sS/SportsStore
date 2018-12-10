@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bll", "Bll\Bll.csproj", "{3D73B20B-4C84-4969-A035-BB5856D12EFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{F6B136A2-F510-4C7A-90C8-8B21BE58759E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{F6B136A2-F510-4C7A-90C8-8B21BE58759E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{FA712D92-D082-484D-B2D0-DE47E8668FFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Tests", "WebApp.Tests\WebApp.Tests.csproj", "{7EA1400F-75BC-475C-A5CA-80E4DC3CC3BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{F6B136A2-F510-4C7A-90C8-8B21BE58759E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6B136A2-F510-4C7A-90C8-8B21BE58759E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6B136A2-F510-4C7A-90C8-8B21BE58759E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA712D92-D082-484D-B2D0-DE47E8668FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA712D92-D082-484D-B2D0-DE47E8668FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA712D92-D082-484D-B2D0-DE47E8668FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA712D92-D082-484D-B2D0-DE47E8668FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA1400F-75BC-475C-A5CA-80E4DC3CC3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA1400F-75BC-475C-A5CA-80E4DC3CC3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA1400F-75BC-475C-A5CA-80E4DC3CC3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA1400F-75BC-475C-A5CA-80E4DC3CC3BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

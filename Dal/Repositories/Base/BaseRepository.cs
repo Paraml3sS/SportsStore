@@ -20,9 +20,10 @@ namespace Dal.Repositories.Base
         {
         }
 
-        public BaseRepository(ApplicationDbContext applicationDbContext) 
+        public BaseRepository(ApplicationDbContext context) 
         {
-            _dbContext = applicationDbContext;
+            _dbContext = context;
+            _entitySet = _dbContext.Set<T>();
         }
 
         public int Add(T entity)
@@ -67,20 +68,9 @@ namespace Dal.Repositories.Base
 
         public IQueryable<T> GetAll() => _entitySet;
 
-
         public IQueryable<T> GetAll<TSortField>(Expression<Func<T, TSortField>> orderBy, bool ascending) =>
             ascending ? _entitySet.OrderBy(orderBy) : _entitySet.OrderByDescending(orderBy);
 
-
-        public IEnumerable<T> ExecuteQuery(string sql)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> ExecuteQuery(string sql, object[] sqlParametersObjects)
-        {
-            throw new NotImplementedException();
-        }
 
         internal int SaveChanges()
         {

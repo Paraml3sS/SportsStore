@@ -17,8 +17,5 @@ namespace Dal.Repositories.Base
         IQueryable<T> GetSome(Expression<Func<T, bool>> where);
         IQueryable<T> GetAll();
         IQueryable<T> GetAll<TSortField>(Expression<Func<T, TSortField>> orderBy, bool ascending);
-
-        IEnumerable<T> ExecuteQuery(string sql);
-        IEnumerable<T> ExecuteQuery(string sql, object[] sqlParametersObjects);
     }
 }

@@ -1,4 +1,7 @@
-﻿using Dal.EF;
+﻿using Bll.Interfaces;
+using Bll.Services;
+using Dal.EF;
+using Dal.Repositories.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +19,10 @@ namespace WebApp
         {
             services.AddDbContextPool<ApplicationDbContext>(options => options
                 .UseSqlServer(
-                    Configuration["Data:SprotsStoreProducts:ConnectionString"]));
+                    Configuration["Data:SportsStoreProducts:ConnectionString"]));
+
+            services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddTransient(typeof(IProductService), typeof(ProductService));
 
             services.AddMvc();
         }
@@ -33,7 +39,6 @@ namespace WebApp
                     name: "default",
                     template: "{controller=Product}/{action=List}/{id?}");
             });
-            SeedData.EnsurePopulated(app);
         }
 
         public Startup(IConfiguration configuration)
