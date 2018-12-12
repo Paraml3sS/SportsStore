@@ -1,12 +1,13 @@
-﻿using Bll.Interfaces;
-using Dal.Repositories.Base;
-using Domain;
+﻿using System.Linq;
+using Bll.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
     public class ProductController : Controller
     {
+        public int PageSize = 5;
+
         private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
@@ -14,6 +15,10 @@ namespace WebApp.Controllers
             _productService = productService;
         }
 
-        public ViewResult List() => View(_productService.GetAll());
+        public ViewResult List(int productPage = 1) =>
+            View(_productService.GetAll()
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize)
+                );
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Linq;
+using Dto;
 
 namespace Bll.Interfaces
 {
     public interface IProductService
     {
-        IQueryable GetAll();
+        IQueryable<ProductDto> GetAll();
     }
 }

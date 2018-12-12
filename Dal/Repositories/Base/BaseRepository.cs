@@ -78,7 +78,7 @@ namespace Dal.Repositories.Base
             {
                 return _dbContext.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException ex)
+            catch (DbUpdateConcurrencyException ex) //TODO
             {
                 throw;
             }

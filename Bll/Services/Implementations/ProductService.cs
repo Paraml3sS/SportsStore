@@ -3,6 +3,7 @@ using Bll.Interfaces;
 using Bll.Mappings;
 using Dal.Repositories.Base;
 using Domain;
+using Dto;
 
 namespace Bll.Services
 {
@@ -15,6 +16,6 @@ namespace Bll.Services
             _productRepo = repo;
         }
 
-        public IQueryable GetAll() => Mapper.MapToDto(_productRepo.GetAll());
+        public IQueryable<ProductDto> GetAll() => Mapper.MapToDto(_productRepo.GetAll());
     }
 }
