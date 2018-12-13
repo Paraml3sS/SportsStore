@@ -1,21 +1,22 @@
 ﻿using System.Linq;
 using Bll.Interfaces;
 using Bll.Mappings;
-using Dal.Repositories.Base;
-using Domain;
+using Dal.Repositories.Interfaces;
 using Dto;
 
 namespace Bll.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IRepository<Product> _productRepo;
+        private readonly IProductRepository _productRepo;
 
-        public ProductService(IRepository<Product> repo)
+        public ProductService(IProductRepository repo)
         {
             _productRepo = repo;
         }
 
-        public IQueryable<ProductDto> GetAll() => Mapper.MapToDto(_productRepo.GetAll());
+        public IQueryable<ProductDto> Get() => Mapper.MapToDto(_productRepo.Get());
+
+        public int Count() => _productRepo.Count();
     }
 }

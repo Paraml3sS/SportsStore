@@ -5,6 +5,7 @@ namespace Bll.Interfaces
 {
     public interface IProductService
     {
-        IQueryable<ProductDto> GetAll();
+        IQueryable<ProductDto> Get();
+        int Count();
     }
 }

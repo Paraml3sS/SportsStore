@@ -2,6 +2,8 @@
 using Bll.Services;
 using Dal.EF;
 using Dal.Repositories.Base;
+using Dal.Repositories.Implementations;
+using Dal.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +22,7 @@ namespace WebApp
                 .UseSqlServer(
                     Configuration["Data:SportsStoreProducts:ConnectionString"]));
 
-            services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddTransient(typeof(IProductRepository), typeof(ProductRepository));
             services.AddTransient(typeof(IProductService), typeof(ProductService));
 
             services.AddMvc();
@@ -34,6 +36,11 @@ namespace WebApp
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "pagination",
+                    template: "Products/Page{productPage}",
+                    defaults: new { Controller = "Product", action = "List"});
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Product}/{action=List}/{id?}");
