@@ -7,5 +7,6 @@ namespace WebApp.Viewmodels
     {
         public IEnumerable<ProductDto> Products { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }

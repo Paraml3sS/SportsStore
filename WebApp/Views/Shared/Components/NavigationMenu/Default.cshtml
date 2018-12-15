@@ -1,0 +1,11 @@
+﻿@model CategoryViewModel
+
+@foreach (var category in Model.Categories)
+{
+    <a class="btn btn-block @(category == Model.SelectedCategory ? "btn-primary" : "btn-secondary")"
+       asp-action="List" asp-controller="Product" asp-route-category="@category" asp-route-productPage="1">
+        @category
+    </a>
+}
+
+<a class="btn btn-block btn-outline-secondary" asp-action="List" asp-controller="Product" asp-route-category="">Reset</a>
